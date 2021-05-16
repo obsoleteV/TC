@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   <!--
+    templates:
+      https://www.w3schools.com/bootstrap/bootstrap_templates.asp
+      https://www.w3schools.com/bootstrap/
+      https://www.w3schools.com/w3css/w3css_templates.asp
+
+      how to create a Web Page: https://www.w3schools.com/w3css/w3css_web_tmp_band.asp
+   -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoría da Computação</title>
+
+    {% load static %}
+    <link rel="icon" type="image/png" href="{% static 'computacao/images/favicon.png' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>   
+
+
+    <link rel="stylesheet" href="{% static 'computacao/style.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <nav class = "navbar navbar-inverse">
+            <div class= "container-fluid">
+                <div class= "navbar-header">
+                    <a class ="navbar-brand" href="{% url 'computacao:index' %}" style="width:100px;">Teoría da Computação</a>
+                </div>  
+                <a href="{% url 'computacao:ExpressoesRegulares' %}" class="btn btn-info" role="button">Expressões Regulares</a>   
+                <a href="{% url 'computacao:automatos' %}" class="btn btn-info" role="button">Autómatos</a>
+                <a href="{% url 'computacao:MaquinaTuring' %}" class="btn btn-info" role="button">Máquinas de Turing</a>
+                
+                <ul class = "nav navbar-inverse navbar-right"> 
+                    <li class=""><a style ="color: grey"> Vasco Almeida </a> </li>
+                </ul>   
+            </div>
+
+            
+        </nav>
+   <!--
+    <header class="container">
+        <nav class = "navbar navbar-default">
+        <div class"navbar-header">
+            <a class ="navbar-brand" href="{% url 'computacao:index' %}">Teoría da Computação</a>
+                <a href="{% url 'computacao:index' %}" class="btn btn-info" role="button">Introdução</a>
+                <a href="{% url 'computacao:automatos' %}" class="btn btn-info" role="button">Autómatos</a>
+                <a href="" class="btn btn-info" role="button">Máquinas de Turing</a>
+            </nav>
+        </div>
+        backup
+   -->
+</header>
+    
+
+    <div  class="text-center">
+         {% block main %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
